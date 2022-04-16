@@ -15,11 +15,9 @@ const ControlledInputs = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if(firstName && email) {
-      const person = {id: new Date().getTime.toString(),
+      const person = {id: new Date().getMilliseconds().toString(),
         firstName, email};
-      setPeople((people)=> {
-        return [...people, person]
-      })
+      setPeople([...people, person])
       setFirstName('')
       setEmail('')
       console.log(people)
