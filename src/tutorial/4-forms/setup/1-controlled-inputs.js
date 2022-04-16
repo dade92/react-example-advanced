@@ -26,7 +26,8 @@ const ControlledInputs = () => {
     }
   };
 
-  return <>
+  return (
+  <>
     <article>
       <form className='form' onSubmit={(e)=>handleSubmit(e)}>
         <div className='form-control'>
@@ -54,14 +55,17 @@ const ControlledInputs = () => {
       {
         people.map((p)=> {
           const {id, firstName, email} = p;
-          return <div key={id} className='item'>
+          return (
+          <div key={id} className='item'>
             <h4>{firstName}</h4>
             <p>{email}</p>
           </div>
+          )
         })
       }
     </article>
   </>
+  )
 };
 
 export default ControlledInputs;
