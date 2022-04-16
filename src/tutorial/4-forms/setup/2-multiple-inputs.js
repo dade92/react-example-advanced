@@ -28,7 +28,7 @@ const ControlledInputs = () => {
   return (
     <>
       <article>
-        <form className='form' onSubmit={handleSubmit}>
+        <form className='form'>
           <div className='form-control'>
             <label htmlFor='firstName'>Name : </label>
             <input
