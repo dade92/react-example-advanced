@@ -47,6 +47,10 @@ const MultipleReturns = () => {
   return (
     <>
       <h1>{user.login}</h1>
+      <h4>
+        User account:
+      </h4>
+      <a href={user.html_url}>link</a>
     </>
   );
 
