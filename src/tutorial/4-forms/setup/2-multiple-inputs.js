@@ -36,7 +36,7 @@ const ControlledInputs = () => {
               id='firstName'
               name='firstName'
               value={person.firstName}
-              onChange={handleChange}
+              onChange={(e)=>handleChange(e)}
             />
           </div>
           <div className='form-control'>
@@ -46,7 +46,7 @@ const ControlledInputs = () => {
               id='email'
               name='email'
               value={person.email}
-              onChange={handleChange}
+              onChange={(e)=>handleChange(e)}
             />
           </div>
           <div className='form-control'>
@@ -56,14 +56,14 @@ const ControlledInputs = () => {
               id='age'
               name='age'
               value={person.age}
-              onChange={handleChange}
+              onChange={(e)=>handleChange(e)}
             />
           </div>
           <button type='submit' onClick={handleSubmit}>add person</button>
         </form>
         </article>
         <article>
-        {people.map((person, index) => {
+        {people.map((person) => {
           const { id, firstName, email, age } = person;
           return (
             <div className='item' key={id}>

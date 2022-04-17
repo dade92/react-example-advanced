@@ -20,7 +20,6 @@ const ControlledInputs = () => {
       setPeople([...people, person])
       setFirstName('')
       setEmail('')
-      console.log(people)
     } else {
       console.log('empty values')
     }
