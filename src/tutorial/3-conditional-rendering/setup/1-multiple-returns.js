@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-const url = 'https://api.github.com/users/QuincyLarson';
+const url = 'https://api.github.com/users/dade92';
 
 const MultipleReturns = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -20,13 +20,13 @@ const MultipleReturns = () => {
           setIsLoading(false);
           setUser(user);
       }) 
-      .catch(error => {
+      .catch((error) => {
         //catch network errors only
         setIsError(true)
         setIsLoading(false);
         }
-      );
-  }, []);
+      )
+    }, []);
 
   if(isLoading) {
     return (
