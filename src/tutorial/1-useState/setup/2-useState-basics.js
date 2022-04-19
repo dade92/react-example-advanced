@@ -6,7 +6,7 @@ const UseStateBasics = () => {
     const [text, setText] = useState(initialTitle)
 
     const handleClick = () => {
-        if(text === initialTitle) {
+        if (text === initialTitle) {
             setText('hello world')
         } else {
             setText(initialTitle)

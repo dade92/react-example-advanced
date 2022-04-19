@@ -2,10 +2,10 @@ import React, {useState} from 'react';
 
 const UseStateObject = () => {
     const [person, setPerson] = useState({
-            name: 'Davide',
-            age: 29,
-            message: 'random message'
-        })
+        name: 'Davide',
+        age: 29,
+        message: 'random message'
+    })
     const changeMessage = (person) => {
         //spread operator!!
         setPerson({...person, message: 'hello world'})

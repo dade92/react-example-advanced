@@ -5,15 +5,15 @@ import React, {useEffect, useState} from 'react';
 
 const UseEffectCleanup = () => {
     const [size, setSize] = useState(window.innerWidth)
-    const checkSize=() => {
+    const checkSize = () => {
         setSize(window.innerWidth)
     }
 
-    useEffect(()=>{
+    useEffect(() => {
         console.log('useEffect')
-       window.addEventListener('resize', checkSize)
+        window.addEventListener('resize', checkSize)
         return () => {
-           console.log('cleanup')
+            console.log('cleanup')
             window.removeEventListener('resize', checkSize)
         }
     }, []);
