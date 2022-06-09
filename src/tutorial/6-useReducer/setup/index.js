@@ -37,7 +37,8 @@ const Index = () => {
                     <h4>{person.name}</h4>
                     <button onClick={() => dispatch(
                         {type: 'REMOVE_ITEM', payload: person.id}
-                    )}>Remove item</button>
+                    )}>Remove item
+                    </button>
                 </div>
             })}
         </>

@@ -28,7 +28,7 @@ export const reducer = (state, action) => {
         }
     }
     if (action.type === 'REMOVE_ITEM') {
-        const newPeople = state.people.filter((p)=> p.id !== action.payload)
+        const newPeople = state.people.filter((p) => p.id !== action.payload)
         return {
             ...state,
             people: newPeople,
