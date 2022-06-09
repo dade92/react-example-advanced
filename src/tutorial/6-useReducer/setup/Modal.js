@@ -1,6 +1,8 @@
 import React, {useEffect} from 'react';
 
-const Modal = ({modalContent, closeModal}) => {
+const Modal = (props) => {
+    const {modalContent, closeModal} = props
+
     useEffect(() => {
         setTimeout(() => {
             closeModal()
