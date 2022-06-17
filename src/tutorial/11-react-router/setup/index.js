@@ -1,5 +1,6 @@
 import React from 'react';
 import {BrowserRouter, Route, Switch} from "react-router-dom";
+import styled from 'styled-components';
 import Home from "./Home";
 import About from "./About";
 import People from "./People";
@@ -10,9 +11,16 @@ import Person from "./Person";
 // pages
 // navbar
 
+const Title = styled.h1`
+  font-size: 1.5em;
+  text-align: center;
+  color: palevioletred;
+`;
+
 const ReactRouterSetup = () => {
     return <BrowserRouter>
         <Navbar/>
+        <Title>this is a title</Title>
         <Switch>
             <Route exact path={"/"}>
                 <Home/>
