@@ -28,7 +28,8 @@ const List = ({people}) => {
                 return (
                     <SinglePerson
                         key={person.id}
-                        {...person}
+                        id={person.id}
+                        name={person.name}
                     />
                 );
             })}
