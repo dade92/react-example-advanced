@@ -18,6 +18,10 @@ const Title = styled.h1`
 `;
 
 const ReactRouterSetup = () => {
+    const onPersonSelected = (person) => {
+        console.log(person)
+    }
+
     return <BrowserRouter>
         <Navbar/>
         <Title>this is a title</Title>
@@ -29,7 +33,7 @@ const ReactRouterSetup = () => {
                 <About/>
             </Route>
             <Route path={"/people"}>
-                <People/>
+                <People onPersonSelected={onPersonSelected}/>
             </Route>
             <Route path={'/person/:id'} children={<Person/>}/>
             <Route path={"*"}>
