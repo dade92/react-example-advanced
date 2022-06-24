@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {memo, useEffect, useState} from 'react'
 import {useFetch} from '../../9-custom-hooks/final/2-useFetch'
 
 // ATTENTION!!!!!!!!!!
@@ -22,7 +22,11 @@ const Index = () => {
     )
 }
 
-const BigList = ({products}) => {
+const BigList = memo(({products}) => {
+    useEffect(()=> {
+        console.log('big list called')
+    })
+
     return (
         <section className='products'>
             {products.map((product) => {
@@ -30,9 +34,13 @@ const BigList = ({products}) => {
             })}
         </section>
     )
-}
+});
 
 const SingleProduct = ({fields}) => {
+    useEffect(()=> {
+        console.log('single product called')
+    })
+
     let {name, price} = fields
     price = price / 100
     const image = fields.image[0].url
