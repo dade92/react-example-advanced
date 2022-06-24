@@ -1,4 +1,4 @@
-import React, {memo, useEffect, useState} from 'react'
+import React, {memo, useCallback, useEffect, useState} from 'react'
 import {useFetch} from '../../9-custom-hooks/final/2-useFetch'
 
 // ATTENTION!!!!!!!!!!
@@ -10,6 +10,11 @@ const url = 'https://course-api.com/javascript-store-products'
 const Index = () => {
     const {products} = useFetch(url)
     const [count, setCount] = useState(0)
+    const [cart, setCart] = useState(0);
+
+    const addToCart = useCallback(() => {
+      setCart(cart + 1)
+    });
 
     return (
         <>
@@ -17,12 +22,13 @@ const Index = () => {
             <button className='btn' onClick={() => setCount(count + 1)}>
                 click me
             </button>
-            <BigList products={products}/>
+            <h1 style={{marginTop: '3rem'}}>cart: {cart}</h1>
+            <BigList products={products} addCart={addToCart}/>
         </>
     )
 }
 
-const BigList = memo(({products}) => {
+const BigList = memo(({products, addCart}) => {
     useEffect(()=> {
         console.log('big list called')
     })
@@ -30,13 +36,13 @@ const BigList = memo(({products}) => {
     return (
         <section className='products'>
             {products.map((product) => {
-                return <SingleProduct key={product.id} {...product}></SingleProduct>
+                return <SingleProduct key={product.id} {...product} addCart={addCart}></SingleProduct>
             })}
         </section>
     )
 });
 
-const SingleProduct = ({fields}) => {
+const SingleProduct = ({fields, addCart}) => {
     useEffect(()=> {
         console.log('single product called')
     })
@@ -50,6 +56,7 @@ const SingleProduct = ({fields}) => {
             <img src={image} alt={name}/>
             <h4>{name}</h4>
             <p>${price}</p>
+            <button onClick={addCart}>Add to cart</button>
         </article>
     )
 }
